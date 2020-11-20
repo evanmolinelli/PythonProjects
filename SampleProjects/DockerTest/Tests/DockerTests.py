@@ -1,7 +1,4 @@
 import time
-import os
-import sys
-sys.path.append(os.path.join(os.path.dirname(__file__), "...", "..."))
 from DockerTest.Tests.BaseTest import BaseTest
 from DockerTest.Pages.LoginPage import LoginPage
 from DockerTest.Pages.SignupPage import SignupPage

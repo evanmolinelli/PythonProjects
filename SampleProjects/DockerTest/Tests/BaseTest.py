@@ -1,6 +1,8 @@
 import unittest
+import HtmlTestRunner
 from selenium import webdriver
 import os
+
 
 class BaseTest(unittest.TestCase):
 
@@ -14,5 +16,9 @@ class BaseTest(unittest.TestCase):
         cls.driver.quit()
         print("Test Completed!")
 
+
 if __name__ == '__main__':
-    unittest.main()
+    #Attempted to store test results in HTML file but not cooperating with Python3 apparently
+    outfile = open(os.path.join(os.getcwd(), "reports") + '\TestReport.html', 'wb')
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=os.path.join(os.getcwd(), "reports")), verbosity=1, stream=outfile)
+    outfile.close()
